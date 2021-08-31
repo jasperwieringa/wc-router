@@ -7,9 +7,7 @@
   <meta name='Description' content='Put your description here.'>
   <base href='/'>
 
-  <link rel="shortcut icon" type="image/jpg" href="./src/assets/favicon.ico">
-
-  <title>AIR</title>
+  <title>ARC</title>
 
   <link crossorigin='anonymous' href='src/themes/index.css' rel='stylesheet'>
   <link crossorigin='anonymous' href='src/themes/light.css' rel='stylesheet'>
@@ -17,14 +15,8 @@
 </head>
 
 <body>
-<arc-container>
-  <arc-navbar slot='nav'>NAVBAR</arc-navbar>
-  <arc-sidebar slot='side'>SIDEBAR</arc-sidebar>
-  <arc-content slot='content'></arc-content>
-</arc-container>
-
-
-<script type='module' src='./out-tsc/src/components/container/arc-container.js'></script>
+<div id='app'></div>
+<script type='module' src='./out-tsc/src/index.js'></script>
 </body>
 
 </html>

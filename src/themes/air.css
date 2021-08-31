@@ -1,0 +1,5 @@
+arc-container[theme='air'] {
+  --arc-background-color: var(--arc-grey-010);
+  --arc-container-color: red;
+  --arc-color-default: blue;
+}

@@ -1,12 +1,18 @@
 {
-  "name": "air-frontend",
-  "description": "AIR front-end following the open-wc recommendations",
-  "license": "ISC",
-  "author": "air",
+  "name": "arc-test",
+  "description": "Webcomponent arc-test following open-wc recommendations",
+  "license": "MIT",
+  "author": "arc-test",
   "version": "0.0.0",
   "scripts": {
-    "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore && stylelint \"**/*.css\" --ignore-path .gitignore",
-    "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore && stylelint \"**/*.css\" --fix --ignore-path .gitignore",
+    "lint:eslint": "eslint --ext .ts,.html . --ignore-path .gitignore",
+    "lint:stylelint": "stylelint --ext .css,.html . --ignore-path .gitignore",
+    "lint:prettier": "prettier \"**/*.ts\" --check --ignore-path .gitignore",
+    "format:eslint": "eslint --ext .ts,.html . --fix --ignore-path .gitignore",
+    "format:stylelint": "stylelint --ext .css,.html . --fix --ignore-path .gitignore",
+    "format:prettier": "prettier \"**/*.ts\" --write --ignore-path .gitignore",
+    "lint": "yarn run lint:eslint && yarn run lint:stylelint && yarn run lint:prettier",
+    "format": "yarn run format:eslint && yarn run format:stylelint && yarn run format:prettier",
     "test": "tsc && wtr --coverage",
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
     "storybook": "tsc && npm run analyze && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
@@ -19,8 +25,7 @@
   "dependencies": {
     "@open-wc/testing": "next",
     "@web/test-runner-commands": "^0.5.11",
-    "lit": "^2.0.0-rc.3",
-    "navigo": "^8.11.1"
+    "lit": "^2.0.0-rc.3"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.15.0",
