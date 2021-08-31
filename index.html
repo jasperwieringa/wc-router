@@ -1,28 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang='en'>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="Put your description here.">
-  <base href="/">
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, viewport-fit=cover' />
+  <meta name='Description' content='Put your description here.'>
+  <base href='/'>
 
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background-color: #ededed;
-    }
-  </style>
-  <title>air-web</title>
+  <title>ARC</title>
+
+  <link crossorigin='anonymous' href='src/themes/index.css' rel='stylesheet'>
+  <link crossorigin='anonymous' href='src/themes/light.css' rel='stylesheet'>
+  <link crossorigin='anonymous' href='src/themes/dark.css' rel='stylesheet'>
 </head>
 
 <body>
-  <air-web></air-web>
+<arc-container>
+  <arc-navbar slot='nav'>NAVBAR</arc-navbar>
+  <arc-sidebar slot='side'>SIDEBAR</arc-sidebar>
+  <arc-content slot='content'></arc-content>
+</arc-container>
 
-  <script type="module" src="./out-tsc/src/air-web.js"></script>
+
+<air-iconbutton content='{
+  name: 'hallo',
+title: 'bye'
+}'></air-iconbutton>
+
+<script type='module' src='./out-tsc/src/components/container/arc-container.js'></script>
 </body>
 
 </html>
