@@ -19,7 +19,8 @@
   "dependencies": {
     "@open-wc/testing": "next",
     "@web/test-runner-commands": "^0.5.11",
-    "lit": "^2.0.0-rc.3"
+    "lit": "^2.0.0-rc.3",
+    "navigo": "^8.11.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.15.0",
