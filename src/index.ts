@@ -4,13 +4,21 @@ import { store } from './utils/store.js';
 
 connectRouter(store);
 
-class MyApp extends LitElement {
+class Air extends LitElement {
   render() {
     return html`
       <div class="app-content">
-        <lit-route>Not foundzz</lit-route>
+        <lit-route path="/" component="air-registration"></lit-route>
+        <lit-route path="/projects" component="air-projects"></lit-route>
+        <lit-route
+          path="/deliverables"
+          component="air-deliverables"
+        ></lit-route>
+        <lit-route path="/objects" component="air-objects"></lit-route>
+        <lit-route path="/report" component="air-report"></lit-route>
+        <lit-route>404</lit-route>
       </div>
     `;
   }
 }
-customElements.define('my-app', MyApp);
+customElements.define('air-component', Air);
