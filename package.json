@@ -1,8 +1,8 @@
 {
   "name": "arc-test",
-  "description": "Webcomponent arc-test following open-wc recommendations",
+  "description": "AIR frontend router",
   "license": "MIT",
-  "author": "arc-test",
+  "author": "AIR",
   "version": "0.0.0",
   "scripts": {
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore && stylelint \"**/*.css\" --ignore-path .gitignore",
@@ -17,7 +17,9 @@
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\""
   },
   "dependencies": {
+    "@arc-web/components": "^1.1.1",
     "@open-wc/testing": "next",
+    "@web/dev-server-esbuild": "^0.2.16",
     "@web/test-runner-commands": "^0.5.11",
     "lit": "^2.0.0-rc.3",
     "lit-redux-router": "^0.19.2",
@@ -55,13 +57,6 @@
     "stylelint-config-standard": "^22.0.0",
     "tslib": "^2.3.1",
     "typescript": "^4.3.5"
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "tabWidth": 2,
-    "semi": true,
-    "singleQuote": true,
-    "arrowParens": "avoid"
   },
   "husky": {
     "hooks": {

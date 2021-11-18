@@ -1,12 +1,20 @@
 import { LitElement, html } from 'lit';
 import { connectRouter } from 'lit-redux-router';
+import { setBasePath } from '@arc-web/components/dist/utilities/base-path.js';
 import { store } from './utils/store.js';
-
-import { AirLoader } from './components/common/loader/AirLoader.js';
+import '@arc-web/components/dist/themes/index.css';
+import '@arc-web/components/dist/themes/light.css';
+import '@arc-web/components/dist/themes/dark.css';
+import '@arc-web/components/dist/components/spinner/arc-spinner.js';
 
 connectRouter(store);
+setBasePath('./src/');
 
 class Air extends LitElement {
+  static get tag() {
+    return 'air-component';
+  }
+
   render() {
     return html`
       <div>
@@ -21,42 +29,41 @@ class Air extends LitElement {
           path="/"
           component="air-core"
           .resolve="${() => import('./components/air-core.js')}"
-          loading="${AirLoader.tag}"
+          loading="arc-spinner"
         ></lit-route>
         <lit-route
           path="/login"
           component="air-login"
           .resolve="${() => import('./components/registration/air-login.js')}"
-          loading="${AirLoader.tag}"
+          loading="arc-spinner"
         ></lit-route>
         <lit-route
           path="/projects"
           component="air-projects"
           .resolve="${() => import('./components/projects/air-projects.js')}"
-          loading="${AirLoader.tag}"
+          loading="arc-spinner"
         ></lit-route>
         <lit-route
           path="/deliverables"
           component="air-deliverables"
-          .resolve="${() =>
-            import('./components/deliverables/air-deliverables.js')}"
-          loading="${AirLoader.tag}"
+          .resolve="${() => import('./components/deliverables/air-deliverables.js')}"
+          loading="arc-spinner"
         ></lit-route>
         <lit-route
           path="/objects"
           component="air-objects"
           .resolve="${() => import('./components/objects/air-objects.js')}"
-          loading="${AirLoader.tag}"
+          loading="arc-spinner"
         ></lit-route>
         <lit-route
           path="/report"
           component="air-report"
           .resolve="${() => import('./components/report/air-report.js')}"
-          loading="${AirLoader.tag}"
+          loading="arc-spinner"
         ></lit-route>
         <lit-route>404</lit-route>
       </div>
     `;
   }
 }
-customElements.define('air-component', Air);
+customElements.define(Air.tag, Air);
