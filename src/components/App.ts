@@ -6,7 +6,6 @@ import '@arc-web/components/dist/components/navbar/arc-navbar.js';
 import '@arc-web/components/dist/components/button/arc-button.js';
 import '@arc-web/components/dist/components/spinner/arc-spinner.js';
 
-import './pages/Home.js';
 import './pages/404.js';
 
 @customElement('air-app')
